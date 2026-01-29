@@ -29,7 +29,7 @@ def after_request(response):
         duration = time.time() - g.start_time
         REQUEST_DURATION.labels(
             method=request.method,
-            endpoint=request.endpoint or 'unknown'
+            endpoint=request.endpoint or  'unknown'
         ).observe(duration)
         REQUEST_COUNT.labels(
             method=request.method,
